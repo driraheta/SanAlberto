@@ -1,0 +1,269 @@
+﻿/*genera styles*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1, h2 {
+    font-family: sans-serif;
+}
+
+.btn-primary {
+    background: #0067b8;
+    border-color: #0067b8;
+}
+
+/*form styles*/
+.custom-form-box, div.card {
+    border: 1px solid #b6b7b8;
+    border-radius: 0px;
+}
+
+.custom-form-box input[type=text], input, select, textarea {
+    color: #3e515b !important;
+    background-color: #fff !important;
+    background-image: none;
+    background-clip: padding-box !important;
+    border: 1px solid #c2cfd6 !important;
+    border-radius: 0px !important;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
+    touch-action: manipulation;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+input.rounded, select.rounded, textarea.rounded {
+    border-radius: 0px !important;
+}
+
+/*menu*/
+.custom-menu-new {
+    display: block !important;
+    width: 55px;
+    color: #fff;
+    background: #29363d;
+    position: absolute; /*era fixed pero para poder activar el scroll por el overflow del ul se activa*/
+    z-index: 1019;
+    height: calc(100vh - 55px); /*55 por el header*/
+    top: 55px; /*55 por el header*/
+}
+
+.custom-menu-old {
+    display: none !important;
+}
+
+.custom-sidebar-nav {
+    overflow: visible;
+    width: 55px;
+    position: relative;
+    flex: 1;
+    background-color: #29363d !important;
+}
+
+.custom-nav {
+    width: 55px;
+    flex-direction: column;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.custom-nav-item {
+    width: 55px;
+    height: 43px;
+    overflow: hidden;
+    border-left: 0 !important;
+    position: relative;
+    margin: 0;
+    transition: background .3s ease-in-out;
+}
+
+.custom-nav-item:hover, .custom-nav-item.custom-open {
+    overflow: visible;
+}
+
+.custom-nav-item:hover .custom-icon {
+    color: #fff !important;
+}
+
+.custom-nav-link {
+    position: relative;
+    padding-left: 5px !important;
+    margin: 0;
+    white-space: nowrap;
+    border-left: 0 !important;
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #fff !important;
+    text-decoration: none !important;
+    background: transparent;
+}
+
+.custom-nav-link:hover, .custom-nav-link.custom-open {
+    background: #20a8d8 !important;
+    width: 250px !important;
+}
+
+.custom-child-nav-link {
+    position: relative;
+    padding-left: 5px !important;
+    margin: 0;
+    white-space: nowrap;
+    border-left: 0 !important;
+    display: none;
+    padding: 0.75rem 1rem;
+    color: #fff !important;
+    text-decoration: none !important;
+    background: transparent;
+}
+
+.custom-child-nav-link:hover, .custom-child-nav-link.custom-open {
+    background: #536c79 !important;
+    width: 250px !important;
+}
+
+.custom-third-child.custom-open {
+    background-color: #688899 !important;
+}
+
+.custom-open{
+    display: block !important;
+    height: auto;
+}
+
+.custom-enlace-ajax {
+}
+
+.custom-icon {
+    font-size: 23px;
+    display: block;
+    float: left;
+    width: 50px;
+    margin: 0 0.5rem 0 0;
+    color: #536c79;
+    text-align: center;
+}
+
+.custom-icon.custom-open {
+    color: #fff !important;
+}
+
+/*top bar*/
+.custom-top-bar-new {
+    display: block !important;
+}
+.custom-top-bar-old {
+    display: none !important;
+}
+.custom-top-bar {
+    position: fixed;
+    z-index: 1020;
+    width: 100%;
+    flex-direction: row;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #d6dfe4;
+    transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -ms-flex 0.25s;
+    flex: 0 0 55px;
+}
+
+.custom-top-bar-title {
+    line-height: 50px;
+    margin-left: 10px;
+    color: #104560;
+}
+
+.custom-top-bar-image {
+    width: 35px;
+    height: 35px;
+}
+
+.custom-top-bar-dropdown {
+    padding-bottom: 0;
+    line-height: 1.5;
+    right: 0;
+    left: auto;
+    position: absolute;
+    float: none;
+    top: 100%;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0 0;
+    margin: 0.125rem 0 0;
+    font-size: 0.875rem;
+    color: #151b1e;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c2cfd6;
+    border-radius: 0px;
+}
+
+.custom-dropdown-header {
+    padding: 8px 20px;
+    background: #f0f3f5;
+    border-bottom: 1px solid #c2cfd6;
+    display: block;
+    margin-bottom: 0;
+    font-size: 0.76563rem;
+    color: #536c79;
+    white-space: nowrap;
+}
+
+.custom-d-block {
+    display: block !important;
+}
+
+.custom-margin-content {
+    margin-top: 55px;
+}
+
+/*grid table*/
+.table th, .table thead td {
+    outline: none;
+    padding: 10px 18px !important;
+    background-image: none !important;
+    background-color: #f0f3f5 !important;
+    border-bottom: 1px solid #c2cfd6 !important;
+    border-top: 1px solid #c2cfd6 !important;
+    border-left: 1px solid #c2cfd6 !important;
+    border-right: 1px solid #c2cfd6 !important;
+    font-weight: bold !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    /*font-size: 0.900rem !important;*/
+    color: #000 !important;
+    text-align: left;
+    padding-left: 5px !important;
+}
+
+.table td {
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    padding: 1px 2px;
+    box-sizing: content-box;
+    background-color: #ffffff;
+    line-height: 25px !important;
+    color: #151b1e !important;
+}
+
+.table tfoot {
+    margin-top: 1px;
+}
+
+.table tfoot div {
+    background-color: #ffffff !important;
+    color: #151b1e !important;
+    border: none !important;
+}
+
+.table tfoot td {
+    padding: 0px !important;
+    border-top: 1px solid #929191 !important;
+    font-size: 100% !important;
+}

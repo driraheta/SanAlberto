@@ -1,0 +1,29 @@
+﻿.btn-primary {
+    color: #fff;
+    background-color: #0511F2;
+    border-color: #0511F2;
+}
+
+footer,
+.nav_menu {
+    background-color: #94C6F2;
+}
+
+.nav.side-menu > li.active > a {
+    text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
+    background: linear-gradient(#0511F2, #0511F2), #0511F2;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0
+}
+
+body {
+    background-color: #2393D9;
+}
+
+.tile_count .tile_stats_count:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 65px;
+    border-left: 0px solid #ADB2B5;
+    margin-top: 10px;
+}

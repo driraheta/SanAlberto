@@ -1,0 +1,95 @@
+﻿th{
+    text-align:center;
+}
+.has-error {
+    border: 1px solid red;
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 70%;
+    color: #dc3545
+}
+
+
+.loader {
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+.icono {
+    min-width: 30px;
+    text-align: center;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.th {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 13px;
+    background-color: #44546A;
+    color: white;
+}
+
+.td {
+    white-space: nowrap;
+    font-size: 13px;
+    vertical-align: middle !important;
+}
+
+.thc {
+    white-space: nowrap;
+    font-size: 13px;
+    background-color: #00B0F0;
+    color: white;
+    text-align: center;
+}
+
+.arrow-h {
+    width: 1rem !important;
+    text-align: right !important;
+    vertical-align: 0 !important;
+    border: 0 !important;
+    font-weight: 900;
+    font-size: .75rem !important;
+    padding-right: 0;
+    margin-right: 0;
+    float: right;
+    margin-top: 7px;
+}
+
+.oculta{
+    display:none;
+}
+
+/*****************
+    Personalizaciones de Select2
+*****************/
+.select2-selection {
+    height: 2.99em !important;
+    line-height: 2.9em !important;
+    border-radius: 0px !important;
+}
+
+.select2-selection__rendered {
+    line-height: 2.9em !important;
+}
+
+.select2-selection__arrow{
+    height: 2.9em !important;
+}
+
+/***Modal mas largo que modal lg***/
+.modal-xl {
+    max-width: 70%;
+}
+
+.modal-xxl {
+    max-width: 90%;
+}

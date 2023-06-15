@@ -1,0 +1,170 @@
+﻿[name=txtSubDiario] {
+    max-width: 45px;
+}
+
+[name=txtNumeroComprobante] {
+    max-width: 50px;
+    color:black;
+    font-size:14px;
+}
+
+[name=txtFechaComprobante] {
+    max-width: 75px;
+    color: black;
+    font-size: 14px;
+}
+
+[name=selectCodigoMoneda] {
+}
+
+[name=txtGlosaPrincipal] {
+    max-height: 60px;
+    width: 140px;
+}
+
+[name=txtTipoDeCambio] {
+    max-width: 45px;
+}
+
+[name=selectTipoConversion] {
+    max-width: 90px;
+}
+
+[name=selectFlagConversionMoneda] {
+    max-width: 110px;
+}
+
+[name=txtFechaTipoCambio] {
+    max-width: 120px;
+}
+
+[name=txtCuentaContable] {
+    max-width: 90px;
+}
+
+[name=txtCodigoAnexo] {
+    resize: none;
+    max-width: 90px;
+    max-height: 40px;
+}
+
+[name=txtCodigoCentroCosto] {
+    max-width: 95px;
+}
+
+[name=selectDebeHaber] {
+    max-width: 60px;
+}
+
+[name=txtImporteOriginal] {
+    max-width: 220px;
+}
+
+[name=txtImporteDolares] {
+    max-width: 220px;
+}
+
+[name=txtImporteSoles] {
+    max-width: 220px;
+}
+
+[name=txtTipoDoc] {
+    max-width: 80px;
+}
+
+[name=txtNumeroDoc] {
+    max-height: 60px;
+    width: 90px;
+    max-width: 140px;
+}
+
+[name=txtFechaDoc] {
+    max-width: 120px;
+}
+[name=txtFechaVencimiento] {
+    max-width: 120px;
+}
+
+[name=txtCodArea] {
+    max-width: 80px;
+}
+
+[name=txtGlosaDetalle] {
+    max-height: 60px;
+    width: 125px;
+    max-width: 140px;
+}
+
+[name=txtCodigoAnexoAuxiliar] {
+    width: 135px;
+}
+
+[name=txtMedioPago] {
+    width: 70px;
+}
+
+[name=txtTipoDocRef] {
+    width: 80px;
+}
+
+[name=txtNumDocRef] {
+    width: 150px;
+}
+
+[name=txtFechaDocRef] {
+    max-width: 120px;
+}
+
+[name=txtNumMaqRegTipoDocRef] {
+    width: 150px;
+}
+
+[name=txtBaseImponibleDocRef] {
+    width: 130px;
+}
+
+[name=txtIGVDocProvision] {
+    width: 130px;
+}
+
+[name=txtTipoRefEstadoMQ] {
+    width: 75px;
+}
+
+[name=txtNumSerieCajaReg] {
+    width: 130px;
+}
+
+[name=txtFechaOperacion] {
+    max-width: 120px;
+}
+
+[name=txtTipoTasa] {
+    width: 85px;
+}
+
+[name=txtTasaDetraccionPercepcion] {
+    width: 130px;
+}
+
+[name=txtImporteBaseDetraccionPercepcionDolares] {
+    width: 130px;
+}
+
+[name=txtImporteBaseDetraccionPercepcionSoles] {
+    width: 130px;
+}
+
+[name=txtTipoCambioF] {
+    width: 85px;
+}
+
+[name=txtImporteIGVSinDerechoCredFis] {
+    width: 165px;
+}
+
+
+
+
+
+

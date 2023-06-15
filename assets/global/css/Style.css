@@ -1,0 +1,63 @@
+﻿/*.thp {
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.tdp {
+    white-space: nowrap;
+    font-size: 13px;
+}*/
+
+.sbr {
+    border: 0;
+    border-bottom: 0;
+}
+
+.vl {
+    border-left: 1px solid silver;
+    height: 380px;
+    /*position: absolute;*/
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+thead {
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /*font-style: oblique;*/
+    /*border: 1px solid #000;*/
+}
+
+tbody {
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /*border: 1px solid #000;
+    border-spacing: 0;*/
+}
+
+
+table tbody tr td {
+    white-space: nowrap;
+    font-size: 10.5px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /*font-style: oblique;*/
+    /*border: 1px solid #000;*/
+}
+
+/*.table_b {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}*/
+
+/*th,td,tr,thead {
+    border: 1px solid #000;
+    border-spacing: 0;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+}*/

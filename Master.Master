@@ -1,0 +1,1302 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="SanAlberto.Master" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>San Alberto</title>
+    <!-- Custom fonts for this template-->
+    <link href="/assets/global/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="/assets/global/template/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="/assets/global/css/site.css" rel="stylesheet" />
+
+    <link href="/assets/global/css/custom.css" rel="stylesheet" />
+    <%--<link href="/assets/global/css/Style.css" rel="stylesheet" />--%>
+    <link href="/assets/global/plugins/navBarLatLACR/css/cssNavBarLatLACR.css" rel="stylesheet" />
+    <%--<link href="/assets/global/css/theme.css" rel="stylesheet" />--%>
+    <link href="/assets/global/plugins/customDesign/styles-panel.css" rel="stylesheet" />
+    <link href="/assets/global/plugins/select2/select2.min.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body id="page-top" onresize="efecto03(this)">
+    <!-- Page Wrapper -->
+    <div class="mio custom-menu-old">
+        <div id="navBarLat">
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="custom-menu-new" style="display: none;">
+            <nav class="custom-sidebar-nav custom-open">
+                <ul id="customNavBarLat" class="custom-nav">
+                </ul>
+            </nav>
+        </div>
+        <!-- Sidebar -->
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <header class="custom-top-bar custom-top-bar-new" style="display: none;">
+                    <div style="float: left;">
+                        <h2 class="custom-top-bar-title">San Alberto</h2>
+                    </div>
+                    <div style="float: right;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdownNew" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-lg-inlnine text-gray-600"><%=nom %></span>
+                            <img class="img-profile rounded-circle custom-top-bar-image" src="<%=foto %>">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in custom-top-bar-dropdown" aria-labelledby="userDropdown">
+                            <%--                            <div class="custom-dropdown-header text-center">
+                                <strong class="custom-d-block"><%=nom %></strong>
+                                <span style="display: none;">email@algo.com</span>
+                            </div>--%>
+                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                onclick="datosUsuario();"
+                                data-target="#settingsModal">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Datos de la cuenta
+                            </a>
+                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                data-target="#chPasswordModal">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Cambiar contraseña
+                            </a>
+
+                            <div class="dropdown-divider" hidden="hidden"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </div>
+                </header>
+                <nav class="pl-0 navbar navbar-expand navbar-light topbar mb-1 static-top shadow custom-top-bar-old"
+                    style="background-color: #578EBE; color: black; z-index: 10;">
+                    <!--
+                    <img src="/assets/global/img/logo.jpeg" alt="logo" style="fill:chocolate" height="70">
+                    TITLE
+                         -->
+                    <%--<div class="tituloPersonalizado">
+                            <div class="letters">
+                                <span class="letter">S</span>
+                                <span class="letter">A</span>
+                                <span class="letter">N</span>
+                                <span class="letter"></span>
+                                <span class="letter">A</span>
+                                <span class="letter">L</span>
+                                <span class="letter">B</span>
+                                <span class="letter">E</span>
+                                <span class="letter">R</span>
+                                <span class="letter">T</span>
+                                <span class="letter">O</span>
+                                <span class="letter"></span>
+                                <span class="letter">1 </span>
+                                <span class="letter">.</span>
+                                <span class="letter">0</span>
+                            </div>
+                        </div>--%>
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/pages/default.aspx" class="site_title">
+                            <i class="fa fa-shopping-cart"></i><span class="letter_title">San Alberto</span>
+                        </a>
+                    </div>
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) 
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            Dropdown - Messages
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        -->
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1" hidden="hidden">
+                            <%--<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-bell fa-fw"></i>
+                                    <!-- Counter - Alerts -->
+                                    <span class="badge badge-danger badge-counter">3+</span>
+                                    </a>--%>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to
+                                                    download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                            Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1" hidden="hidden">
+                            <%--<a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-envelope fa-fw"></i>
+                                    <!-- Counter - Messages -->
+                                    <span class="badge badge-danger badge-counter">7</span>
+                                    </a>--%>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">
+                                            Hi there! I am wondering if you can help me
+                                                    with a problem I've been having.
+                                        </div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">
+                                            I have the photos that you ordered last
+                                                    month, how would you like them sent to you?
+                                        </div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">
+                                            Last month's report looks great, I am very
+                                                    happy with the progress so far, keep up the good work!
+                                        </div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">
+                                            Am I a good boy? The reason I ask is because
+                                                    someone told me that people say this to all dogs, even if they
+                                                    aren't good...
+                                        </div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
+                                            Messages</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="nomUsu" class="mr-2 d-none d-lg-inline small nomUsuario">
+                                    <%=nom %>
+                                </span>
+                                <span id="usu" class="d-none">
+                                    <%=usu %>
+                                </span>
+                                <img class="img-profile rounded-circle"
+                                    src="/assets/global/img/letters/<%=nom.Substring(0,1) %>.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <%--<a class="dropdown-item" href="#" hidden="hidden">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                        </a>
+                                        <a class="dropdown-item" href="#" hidden="hidden">
+                                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Settings
+                                        </a>
+                                        <a class="dropdown-item" href="#" hidden="hidden">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Activity Log
+                                        </a>--%>
+                                <div class="dropdown-divider" hidden="hidden"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Sesón
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid ml-5 custom-margin-content">
+                    <div>
+                        <asp:ContentPlaceHolder ID="body" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-white mt-3">
+        <div class="container">
+            <div class="text-center">
+                <span>Desarrollado por <a href="http://www.grupodcs.com">DCS CORP</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Account Settings Modal-->
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Datos de la Cuenta</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="userid" name="userid" />
+                    <input type="hidden" id="username" name="username" />
+
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-1">
+                                    <div>
+                                        <div class="user_avatar">
+                                            <img id="userImage" class="img-profile rounded-circle custom-top-bar-image" src="<%=foto %>" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="width: 10px"></div>
+                                <div class="col-10">
+                                    <div class="image-profile-changepicture">
+                                        <div>
+                                            <label for="changePicture" data-disabled="false">Elegir foto</label>
+                                            <span>.</span>
+                                            <label onclick="eliminarImagen();">Eliminar</label>
+                                        </div>
+                                        <span>Tamaño máximo 2 MB. Formatos: JPG, JPEG, PNG</span>
+                                        <input type="file" style="display: none;" id="changePicture" name="changePicture" accept="image/*" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nombreUsuario" class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="eMailUsuario" class="col-sm-2 col-form-label">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="eMailUsuario" name="eMailUsuario" placeholder="Correo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="telUser" class="col-sm-2 col-form-label">Telefono</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="telUser" name="telUser" placeholder="Telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="guardarSettings();" class="btn btn-primary">Guardar</button>
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Change Password Modal-->
+    <div class="modal fade" id="chPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambio de Contraseña</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="chPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="chPassword" name="chPassword" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="chPasswordConfirm" class="col-sm-2 col-form-label">Confirmacion</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="chPasswordConfirm" name="chPasswordConfirm" placeholder="Confirmar Contraseña">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="actualizarPassword();" class="btn btn-primary">Guardar</button>
+                    <button onclick="limpiezaPassword();" class="btn btn-warning" type="button" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesión</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Seleccione "Cerrar Sesión" a continuación si está listo para finalizar su
+                        sesión actual.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="logout">Cerrar Sesión</button>
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/assets/global/plugins/jquery/jquery.min.js"></script>
+    <script src="/Scripts/jquery-3.5.1.js"></script>
+    <script src="/assets/global/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <!--script src="/assets/global/plugins/jquery-easing/jquery.easing.min.js"></script> -->
+
+    <!-- Custom scripts for all pages-->
+    <%-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.2/dist/sweetalert2.all.min.js">
+            </script>--%>
+
+    <!--  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="/assets/global/js/masterNew.js"></script>
+    <script src="/assets/global/plugins/moment/moment.min.js"></script>
+    <script src="/assets/global/plugins/navBarLatLACR/js/scriptNavBarLatLACR.js"></script>
+    <script src="/assets/global/js/utils.js"></script>
+    <script src="/assets/global/js/js.cookie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <%-- <script src="/assets/global/template/js/sb-admin-2.min.js">
+                </script> --%>
+    <script src="/assets/global/plugins/select2/select2.min.js"></script>
+
+    <!-- **************************** MODALES COMUNES ********************************-->
+    <!-- modal nuevo exportador -->
+    <div class="modal fade" id="exporta">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Tipo de Documento</label>
+                            <select class="form-control select2" id="tde" data-val="true">
+                                <option value=""></option>
+                                <option value="1">RUC</option>
+                                <option value="2">DNI</option>
+                                <option value="3">Carnet de Extranjería</option>
+                                <option value="4">Pasaporte</option>
+                                <option value="5">Otro</option>
+                            </select>
+                            <span id="etd" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label>RUC</label>
+                            <input type="text" class="form-control" id="ruc" data-val="true" />
+                            <span id="eruc" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Razón Social</label>
+                            <input type="text" class="form-control" id="razs" data-val="true" />
+                            <span id="erazs" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Razón Comercial</label>
+                            <input type="text" class="form-control" id="razc" data-val="true" />
+                            <span id="erazc" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label>Dirección Fiscal</label>
+                            <input type="text" class="form-control" id="dirf" />
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label>Dirección Comercial</label>
+                            <input type="text" class="form-control" id="dirc" />
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label>Ubigeo</label>
+                            <select id="ubi" class="form-control select2" data-val="true">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Estado</label>
+                            <select class="form-control select2" id="status" data-val="true">
+                                <option value=""></option>
+                                <option value="1">Activo</option>
+                                <option value="2">Inactivo</option>
+                            </select>
+                            <span id="estatus" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-12 border-bottom">
+                            DATOS DE VENTAS
+                        </div>
+                        <div class="col-12 py-3">
+                            <div class="row">
+                                <div class="col form-group text-left">
+                                    <label><i class="fa fa-file-alt"></i>&nbsp;Tipos</label>
+                                    <div class="input-group">
+                                        <select id="tip" class="form-control select2">
+                                            <option value="">Selecciona el tipo</option>
+                                            <option value="1">Exportador</option>
+                                            <option value="2">Importador</option>
+                                            <option value="3">Local</option>
+                                            <option value="4">Propio</option>
+                                        </select>
+                                        <div class=" input-group-append">
+                                            <button class="btn btn-success btn-sm float-right" id="agretipo"><i class="fa fa-plus-circle"></i>&nbsp;Agregar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 table-responsive table-responsive-sm">
+                                <table class="table table-sm table-bordered table-hover table-striped" id="tipos">
+                                    <thead>
+                                        <tr>
+                                            <td style="display: none">Id</td>
+                                            <td class="text-center">Tipo</td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label>Lista de Contactos</label>
+                            <button class="btn btn-success btn-sm float-right" id="ncont"><i class="fa fa-plus-circle mr-1"></i>Agregar</button>
+                        </div>
+                        <div class="stickyTable col-12 table-responsive table-responsive-sm">
+                            <table class="table table-sm table-bordered table-hover table-striped" id="contactos">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Teléfono</th>
+                                        <th class="text-center">Correo</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guaex"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+                            <button type="button" style="width: 180px" class="btn btn-warning" id="canex"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nuevo contacto de exportador-->
+    <div class="modal fade" id="mcontacto">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Contacto</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="nomc" data-val="true" />
+                            <span id="enomc" class="invalid-feedback"></span>
+                        </div>
+
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Teléfono</label>
+                            <input type="text" class="form-control" id="telc" data-val="true" />
+                            <span id="etelc" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Correo</label>
+                            <input type="text" class="form-control" id="corrc" data-val="true" />
+                            <span id="ecorrc" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="agrcont"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+                            <button type="button" style="width: 180px" class="btn btn-warning" id="cancont"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nueva moneda -->
+    <div class="modal fade" id="mmoneda">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nueva Moneda</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Simbolo</label>
+                            <input type="text" class="form-control" id="monsim" data-val="true" />
+                            <span id="emonsim" class="invalid-feedback"></span>
+                        </div>
+
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" id="monnom" data-val="true" />
+                            <span id="emonnom" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guamon"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canmon"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nuevo mercado -->
+    <div class="modal fade" id="mmercado">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Mercado</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" id="mernom" data-val="true" />
+                            <span id="emernom" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guamer"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canmer"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nuevo pais -->
+    <div class="modal fade" id="mpais">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Pais</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="panom" data-val="true" />
+                            <span id="epanom" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Clave</label>
+                            <input type="text" class="form-control" id="paclave" data-val="true" />
+                            <span id="epaclave" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guapais"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canpais"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nueva condición de pago -->
+    <div class="modal fade" id="mcondpago">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nueva Condición de Pago</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>CondPago</label>
+                            <input type="text" class="form-control" id="condes" data-val="true" />
+                            <span id="econdes" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Dias</label>
+                            <input type="text" class="form-control numeros" id="condias" data-val="true" />
+                            <span id="econdias" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guacond"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="cancond"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nueva forma de pago -->
+    <div class="modal fade" id="mfpago">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nueva Forma de Pago</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Forma Pago</label>
+                            <input type="text" class="form-control" id="fpagodes" data-val="true" />
+                            <span id="efpagodes" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Dias</label>
+                            <input type="text" class="form-control numeros" id="fpagodias" data-val="true" />
+                            <span id="efpagodias" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guafpago"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canfpago"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nuevo cliente -->
+    <div class="modal fade" id="mcliente">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Cliente</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Número Documento</label>
+                            <input type="text" class="form-control" id="numdoc" data-val="true" />
+                            <span id="enumdoc" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Nombre / Razón Social</label>
+                            <input type="text" class="form-control" id="clinom" data-val="true" />
+                            <span id="eclinom" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-6 form-group">
+                            <label>Tipo de Documento</label>
+                            <select class="form-control" id="td" data-val="true">
+                                <option value=""></option>
+                                <option value="1">DNI</option>
+                                <option value="2">Carnet de Extranjería</option>
+                                <option value="3">RUC</option>
+                                <option value="4">RUS</option>
+                                <option value="5">Pasaporte</option>
+                                <option value="6">Cédula Diplomatica</option>
+                                <option value="7">Otro</option>
+                            </select>
+                            <span id="emod" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Estado</label>
+                            <select class="form-control" id="clistatus" data-val="true">
+                                <option value=""></option>
+                                <option value="1">Activo</option>
+                                <option value="2">Inactivo</option>
+                            </select>
+                            <span id="eclistatus" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="email" />
+                            <span id="eemail" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Teléfono</label>
+                            <input type="text" class="form-control numeros" id="tel" />
+                            <span id="etel" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Celular</label>
+                            <input type="text" class="form-control numeros" id="cel" />
+                            <span id="ecel" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Ubigeo</label>
+                            <select id="cliubi" class="form-control" data-val="true">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Linea de Crédito(Soles)</label>
+                            <input type="text" class="form-control decimal" id="lincre" data-val="true" />
+                            <span id="elincre" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-3 col-12 form-group">
+                            <label>Días de Credito</label>
+                            <input type="text" class="form-control numeros" id="diacre" data-val="true" />
+                            <span id="ediacre" class="invalid-feedback"></span>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Dirección Comercial</label>
+                            <input type="text" class="form-control" id="dircom" />
+                            <span id="edircom" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Dirección Fiscal</label>
+                            <input type="text" class="form-control" id="dirfis" data-val="true" />
+                            <span id="edirfis" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12 border-bottom">
+                            <h6>CONTACTOS</h6>
+                            <button class="btn btn-success btn-sm float-right" id="nuecon"><i class="fa fa-plus-circle mr-1"></i>Agregar</button>
+                        </div>
+
+                        <div class="col-md-12 col-12 table-responsive table-responsive-sm">
+                            <table class="table table-sm table-bordered table-hover table-striped" id="tblcont">
+                                <thead>
+                                    <tr>
+                                        <td class="text-center" style="display: none;">
+                                        ID</th>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Linea Credito</th>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 border-bottom">
+                            <h6>DIRECCIONES DE LLEGADA</h6>
+                        </div>
+                        <div class="col-md-10 col-12 mb-2">
+                            <label>Direcciones de Llegada</label>
+                            <button class="btn btn-blue-madison btn-sm float-right" id="ndirlleg"><i class="fa fa-plus-circle"></i>&nbsp;Agregar</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-12 table-responsive table-responsive-sm">
+                            <table class="table table-sm table-bordered table-hover table-striped" id="dirllegada">
+                                <thead>
+                                    <tr>
+                                        <td class="text-center">Descripción</td>
+                                        <td class="text-center">Puesto</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guacli"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="cancli"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal de asociación cliente contacto -->
+    <div class="modal fade" id="mclicon">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar Contacto</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-12 form-group">
+                            <label>Contacto</label>
+                            <select class="form-control" id="contcli">
+                            </select>
+                            <span id="eiddocumento" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-5 col-12 form-group">
+                            <label>Linea Credito</label>
+                            <input type="text" class="form-control decimal" id="lincrecon" data-val="true" />
+                            <span id="edirfis" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="agrcon"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+                            <button type="button" style="width: 180px" class="btn btn-warning" id="cancon"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal nueva dirección de llegada cliente-->
+    <div class="modal fade" id="mdirlleg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dirección de Llegada</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 col-12 form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" id="descdlleg" data-val="true" />
+                            <span id="edescdlleg" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Puesto</label>
+                            <input type="text" class="form-control" id="puestodlleg" data-val="true" />
+                            <span id="epuestodlleg" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guadirlleg"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="candlleg"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- modal dirección de llegada Editar -->
+    <div class="modal fade" id="mdirllege">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dirección de Llegada</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="text" class="form-control" id="tdid" data-val="true" style="display: none" />
+                        <div class="col-md-8 col-12 form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" id="descdllege" data-val="true" />
+                            <span id="edescdllege" class="invalid-feedback"></span>
+                        </div>
+                        <div class="col-md-4 col-12 form-group">
+                            <label>Puesto</label>
+                            <input type="text" class="form-control" id="puestodllege" data-val="true" />
+                            <span id="epuestodllege" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="agrdirllege"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="candllege"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal contacto de cliente-->
+    <div class="modal fade" id="mcontactocliente">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Contacto</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Contacto</label>
+                            <input type="text" class="form-control" id="clicontnom" data-val="true" />
+                            <span id="enclicontnom" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guaclicont"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canclicont"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal transportista-->
+    <div class="modal fade" id="mtrans">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Transportista</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Empresa</label>
+                            <input type="text" class="form-control" id="transnom" data-val="true" />
+                            <span id="etransnom" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Marca</label>
+                            <select id="transmar" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Placa de Vehículo</label>
+                            <input type="text" class="form-control" id="transplaca" data-val="true" />
+                            <span id="etransplaca" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Nombre Conductor</label>
+                            <input type="text" class="form-control" id="transchofer" data-val="true" />
+                            <span id="etranschofer" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Nro Brevete</label>
+                            <input type="text" class="form-control" id="transbrevete" data-val="true" />
+                            <span id="etransbrevete" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 form-group">
+                            <label>Capacidad (No Cajas)</label>
+                            <input type="text" class="form-control numeros" id="transcapa" data-val="true" />
+                            <span id="etranscapa" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guatrans"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="cantrans"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- /modal transportista-->
+
+    <!-- modal punto entrega-->
+
+    <div class="modal fade" id="mpunentrega">
+        <div class="modal-dialog modal-dialog-centered modal">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nuevo Punto de Entrega</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 col-12 form-group">
+                            <label>Punto de Entrega</label>
+                            <input type="text" class="form-control" id="puntentrega" data-val="true" />
+                            <span id="epuntentrega" class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <div class="row pos text-right">
+                        <div class="col-md-12 my-2 float-right">
+                            <button type="button" style="width: 180px" class="btn btn-primary" id="guapunentrega"><i class="fa fa-plus-circle"></i>&nbsp;Guardar</button>
+                            &nbsp;
+						<button type="button" style="width: 180px" class="btn btn-warning" id="canpunentrega"><i class="fa fa-times-circle"></i>&nbsp;Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ***************************/ MODALES COMUNES ********************************-->
+
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

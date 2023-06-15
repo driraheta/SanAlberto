@@ -1,0 +1,160 @@
+﻿.trinve {
+    background: #578EBE !important;
+    color: #F8F9FC !important;
+}
+
+/*header*/
+nav {
+    background-color: #94C6F2 !important;
+    color: #eee;
+}
+.nav_title {
+    width: 230px;
+    float: left;
+    border-radius: 0;
+    height: 60px;
+    font-size: 27px;
+    
+}
+
+.menuLACR .line div font {
+    color: #2393D9;
+}
+
+.letter_title {
+    color: #eee;
+}
+
+.site_title i {
+    border: 1px solid #EAEAEA;
+    padding: 5px 6px;
+    border-radius: 50%;
+    color: #eee;
+}
+
+/*-------------------Temas param las tablas---------------------------*/
+table {
+    text-align: left;
+    font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+    /*border: 1px solid #006699 !important;*/
+    border-radius: 3px;
+}
+
+
+th {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+
+td {
+    padding: 3px 10px;
+    color: #00496B;
+    border-left: 1px solid #E1EEF4;
+    font-size: 12px;
+    font-weight: normal;
+    background: #E1EEF4;
+}
+
+    td:first-child {
+        border-left: none;
+    }
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tfoot td div {
+    border-top: 1px solid #006699;
+    background: #E1EEF4;
+    padding: 2px;
+}
+
+tfoot td {
+    padding: 0;
+    font-size: 12px;
+    color: #00496B;
+    background: #E1EEF4;
+}
+
+    tfoot td select {
+        color: #00496B;
+    }
+
+    tfoot td input {
+        color: #00496B;
+    }
+
+tr:hover td {
+    background: #d0dafd;
+    color: #339;
+}
+
+.table-responsive th {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+
+.stickyTable .table-responsive th {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+.table-responsive thead td {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+.table-striped thead td {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+
+.tablesorter-default thead tr th {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}
+
+.table-hover thead tr th {
+    padding: 3px 10px;
+    background-image: linear-gradient(180deg, #006699 5%, #00557F 100%);
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 1px solid #0070A8;
+}

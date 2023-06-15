@@ -1,0 +1,32 @@
+[
+  {
+    "ORDEN": 1,
+    "MES": "January",
+    "TOTAL": 11250.0000
+  },
+  {
+    "ORDEN": 2,
+    "MES": "February",
+    "TOTAL": 975.0000
+  },
+  {
+    "ORDEN": 3,
+    "MES": "March",
+    "TOTAL": 702.0000
+  },
+  {
+    "ORDEN": 4,
+    "MES": "April",
+    "TOTAL": 3450.0000
+  },
+  {
+    "ORDEN": 5,
+    "MES": "May",
+    "TOTAL": 5100.0000
+  },
+  {
+    "ORDEN": 6,
+    "MES": "June",
+    "TOTAL": 1150.0000
+  }
+]
