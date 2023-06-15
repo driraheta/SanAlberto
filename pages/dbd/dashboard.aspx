@@ -118,11 +118,17 @@
                 </div>
                 <div class="card-body">
                    <%-- <div class="row m-0">--%>
-                        <div id="divChartTopVentas" class="col-12 p-0" style="z-index: 1">
+                        <div id="divChartTopVentas" class="col-8 p-0" style="z-index: 1">
                             <div class="chart-container" style="height: 320px">
                                  <canvas id="TopVentas" height="320" style="display: block; max-height:300px; width: 450px; height: 250px;" class="chartjs-render-monitor"></canvas>
                             </div>
                         </div>
+                    <div class="col-4 p-0" style="z-index: 1">
+                        <div class="row">
+                             <select id="chart02SelectEspecies" style="width: 100%">
+                                    </select>
+                        </div>
+                    </div>
                     <%--</div>--%>
                 </div>
             </div>
@@ -547,8 +553,8 @@
     <!-- Page level plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="/assets/global/plugins/chart.js/chart.min.js"></script>
- <%--   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js
-"></script>--%>
+    <%--<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>--%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/global/js/jquery.malco.js"></script>
     <script src="/assets/global/js/js.cookie.js"></script>
     <!-- Page level custom scripts -->

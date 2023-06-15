@@ -35,7 +35,6 @@ function ventasxdia() {
 function cobranzaxdia() {
     var response = realizarLlamadaAjax('/tmp/data/cobranzaxdia.json', 'GET', '');
     if (response.status == 200) {
-        debugger;
         var datos = response.responseJSON;
         var parrafo = document.getElementById("cobranzaxdia");
         parrafo.textContent = 'S/ ' + datos[0].MONTO_A_PAGAR;
@@ -45,7 +44,6 @@ function cobranzaxdia() {
 function pedidosxdia() {
     var response = realizarLlamadaAjax('/tmp/data/pedidosxdia.json', 'GET', '');
     if (response.status == 200) {
-        debugger;
         var datos = response.responseJSON;
         var parrafo = document.getElementById("pedidoxdia");
         parrafo.textContent = 'S/ ' + datos[0].TOTAL;
@@ -102,7 +100,7 @@ function ventasMensuales() {
         const config = {
             labels: meses,
             datasets: [{
-                label: 'Venta Mensual por Operacion',
+                label: 'Venta Mensual',
                 data: montos,
                 borderColor: '#1B78EF',
                 backgroundColor: '#63A2F3',
@@ -116,6 +114,23 @@ function ventasMensuales() {
             type: "line",
             data: config,
             options: {
+                scales: {
+                    x: {
+                        ticks: {
+                            callback: function (val, index) {
+                                return this.getLabelForValue(val) + '-' + obtenerAnioActual();
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            callback: function (val, index) {
+                                //val = val.toLocaleString("en-US");
+                                return this.getLabelForValue(val).toLocaleString("es-ES");
+                            }
+                        }
+                    }
+                }
             }
         });
     }
@@ -158,7 +173,25 @@ function CuentasvsCobros() {
             }],
             labels: meses
         },
-        options: {}
+            options: {
+                scales: {
+                    x: {
+                        ticks: {
+                            callback: function (val, index) {
+                                return this.getLabelForValue(val) + '-' + obtenerAnioActual();
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            callback: function (val, index) {
+                                //val = val.toLocaleString("en-US");
+                                return this.getLabelForValue(val).toLocaleString("es-ES");
+                            }
+                        }
+                    }
+                }
+            }
     });
         /////////////////
 }
@@ -197,4 +230,12 @@ function obtenerMesesHastaActual() {
     const mesActual = fechaActual.getMonth();
 
     return meses.slice(0, mesActual + 1);
+}
+
+//retorna el anio actual pero en formato corto
+function obtenerAnioActual() {
+    const fecha = new Date();
+    const anio = fecha.getFullYear();
+    const anioDosDigitos = anio.toString().slice(-2);
+    return anioDosDigitos;
 }
